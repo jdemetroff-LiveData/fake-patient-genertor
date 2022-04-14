@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fake-patient-genertor"
+version = "0.1.0"
+description = "A tool to generte fake patient details for demos"
+authors = ["Justin Demetroff <jdemetroff@livedata.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+names = "^0.3.0"
+Faker = "^13.3.4"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
