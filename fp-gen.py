@@ -34,15 +34,17 @@ if __name__ == '__main__':
     for fpg_id in range(1, args.patients + 1):
         dob = Faker().date_between(start_date='-80y', end_date='-18y')
         if fpg_id < ((args.patients + 1) / 2):
-            name = names.get_full_name(gender='female')
+            first_name = names.get_first_name(gender='female')
             sex = 'F'
         else:
-            name = names.get_full_name(gender='male')
+            first_name = names.get_first_name(gender='male')
             sex = 'M'
+        
+        last_name = names.get_last_name()
 
         fake_patients.append(
             {
-                '%Name%': name,
+                '%Name%': f'{last_name.upper()},{first_name.upper()}',
                 '%Sex%': sex,
                 '%Dob%': '{0:%m/%d/%Y}'.format(dob),
                 '%Ssn%': f'{rand_digits(3)}-{rand_digits(2)}-{rand_digits(4)}',
